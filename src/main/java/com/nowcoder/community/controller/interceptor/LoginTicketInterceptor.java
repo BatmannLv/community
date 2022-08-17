@@ -50,7 +50,10 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
 
     //模板方法前调用，可以将用户信息作用于模板引擎
     @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest request,
+                           HttpServletResponse response,
+                           Object handler,
+                           ModelAndView modelAndView) throws Exception {
         //获取当前线程持有的user
         User user = hostHolder.getUser();
         if (user != null && modelAndView != null) {
