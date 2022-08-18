@@ -6,8 +6,10 @@
 
     <!-- error file -->
     <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+<!--        日志存储位置-->
         <file>${LOG_PATH}/${APPDIR}/log_error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+<!--            日志文件名格式-->
             <fileNamePattern>${LOG_PATH}/${APPDIR}/error/log-error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>5MB</maxFileSize>
@@ -84,7 +86,7 @@
         </filter>
     </appender>
 
-<!--    项目的日志级别-->
+<!--    项目的日志级别为debug，和该配置文件生效的范围（整个community）-->
     <logger name="com.nowcoder.community" level="debug"/>
 
     <root level="info">

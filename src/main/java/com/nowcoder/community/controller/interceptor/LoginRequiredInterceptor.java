@@ -18,7 +18,9 @@ public class LoginRequiredInterceptor implements HandlerInterceptor {
     private HostHolder hostHolder;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request,
+                             HttpServletResponse response,
+                             Object handler) throws Exception {
         if (handler instanceof HandlerMethod) {
             //只有方法被拦截
             HandlerMethod handlerMethod = (HandlerMethod) handler;
