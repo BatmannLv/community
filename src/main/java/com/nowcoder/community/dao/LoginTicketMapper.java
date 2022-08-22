@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.*;
  * @create 2022-08-15 16:40
  */
 @Mapper
+//采用Redis的方式对其替代
+@Deprecated
 public interface LoginTicketMapper {
     //此处采用直接注解的方式写动态SQL
     //省略一个XML文件

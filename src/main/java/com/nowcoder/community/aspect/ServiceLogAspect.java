@@ -33,6 +33,10 @@ public class ServiceLogAspect {
         // 用户(ip)[1.2.3.4],在[xxx],访问了[com.nowcoder.community.service.xxx()].
         //先获取ip地址
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        //为空直接返回，防止kafka调用报错
+        if (attributes == null) {
+            return;
+        }
         HttpServletRequest request = attributes.getRequest();
         String ip = request.getRemoteHost();
         //拼接并记录
